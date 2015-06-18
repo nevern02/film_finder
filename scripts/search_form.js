@@ -1,6 +1,6 @@
 var timeout = null;
 
-var SearchForm = React.createClass({
+var SearchForm = React.createClass({displayName: "SearchForm",
   handleSubmit: function(e) {
     e.preventDefault();
   },
@@ -14,9 +14,9 @@ var SearchForm = React.createClass({
   },
   render: function() {
     return (
-      <form className="searchForm form-group" onSubmit={this.handleSubmit}>
-        <input className="form-control input-lg" autoFocus type="search" ref="text" onChange={this.updateText} placeholder="Start typing a film name..." />
-      </form>
+      React.createElement("form", {className: "searchForm form-group", onSubmit: this.handleSubmit}, 
+        React.createElement("input", {className: "form-control input-lg", autoFocus: true, type: "search", ref: "text", onChange: this.updateText, placeholder: "Start typing a film name..."})
+      )
     );
   }
 });

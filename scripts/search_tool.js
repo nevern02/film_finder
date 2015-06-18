@@ -1,4 +1,4 @@
-var SearchTool = React.createClass({
+var SearchTool = React.createClass({displayName: "SearchTool",
   submitSearch: function(text) {
     if (text.length === 0) {
       return;
@@ -20,19 +20,19 @@ var SearchTool = React.createClass({
   },
   render: function() {
     return (
-      <div className="searchTool">
-        <div className="row">
-          <SearchForm onSubmitSearch={this.submitSearch} class="row" />
-        </div>
-        {this.state.loading && <Spinner />}
-        <SearchResults results={this.state.results}/>
-      </div>
+      React.createElement("div", {className: "searchTool"}, 
+        React.createElement("div", {className: "row"}, 
+          React.createElement(SearchForm, {onSubmitSearch: this.submitSearch, class: "row"})
+        ), 
+        this.state.loading && React.createElement(Spinner, null), 
+        React.createElement(SearchResults, {results: this.state.results})
+      )
     );
   }
 });
 
 React.render(
-  <SearchTool />,
+  React.createElement(SearchTool, null),
   document.getElementById("search-tool")
 );
 

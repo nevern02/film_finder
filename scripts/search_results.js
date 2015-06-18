@@ -1,15 +1,15 @@
-var SearchResults = React.createClass({
+var SearchResults = React.createClass({displayName: "SearchResults",
   render: function() {
     var resultList = this.props.results.map(function(film) {
       return (
-        <SearchResult title={film.Title} year={film.Year} imdb={film.imdbID} />
+        React.createElement(SearchResult, {title: film.Title, year: film.Year, imdb: film.imdbID})
       );
     });
 
     return (
-      <div className="searchResults">
-        {resultList}
-      </div>
+      React.createElement("div", {className: "searchResults"}, 
+        resultList
+      )
     );
   }
 });

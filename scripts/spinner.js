@@ -1,10 +1,10 @@
-var Spinner = React.createClass({
+var Spinner = React.createClass({displayName: "Spinner",
   render: function() {
     return (
-      <div className="spinner">
-        <div className="double-bounce1"></div>
-        <div className="double-bounce2"></div>
-      </div>
+      React.createElement("div", {className: "spinner"}, 
+        React.createElement("div", {className: "double-bounce1"}), 
+        React.createElement("div", {className: "double-bounce2"})
+      )
     );
   }
 });
