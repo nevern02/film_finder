@@ -14,8 +14,8 @@ var SearchForm = React.createClass({
   },
   render: function() {
     return (
-      <form className="searchForm" onSubmit={this.handleSubmit}>
-        <input type="search" ref="text" onChange={this.updateText} placeholder="Start typing a film name..." />
+      <form className="searchForm form-group" onSubmit={this.handleSubmit}>
+        <input className="form-control input-lg" type="search" ref="text" onChange={this.updateText} placeholder="Start typing a film name..." />
       </form>
     );
   }

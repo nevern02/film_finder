@@ -10,7 +10,9 @@ var SearchTool = React.createClass({
   render: function() {
     return (
       <div className="searchTool">
-        <SearchForm onSubmitSearch={this.submitSearch} />
+        <div className="row">
+          <SearchForm onSubmitSearch={this.submitSearch} class="row" />
+        </div>
         <SearchResults results={this.state.results}/>
       </div>
     );
