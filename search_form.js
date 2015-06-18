@@ -15,7 +15,7 @@ var SearchForm = React.createClass({
   render: function() {
     return (
       <form className="searchForm form-group" onSubmit={this.handleSubmit}>
-        <input className="form-control input-lg" type="search" ref="text" onChange={this.updateText} placeholder="Start typing a film name..." />
+        <input className="form-control input-lg" autoFocus type="search" ref="text" onChange={this.updateText} placeholder="Start typing a film name..." />
       </form>
     );
   }

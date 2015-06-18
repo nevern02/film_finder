@@ -1,11 +1,13 @@
 var SearchTool = React.createClass({
   submitSearch: function(text) {
+    this.setState({loading: true});
+
     $.getJSON('http://www.omdbapi.com/?s=' + text, function(data) {
-      this.setState({results: data.Search});
+      this.setState({loading: false, results: data.Search});
     }.bind(this));
   },
   getInitialState: function() {
-    return {results: []};
+    return {loading: false, results: []};
   },
   render: function() {
     return (
@@ -13,7 +15,8 @@ var SearchTool = React.createClass({
         <div className="row">
           <SearchForm onSubmitSearch={this.submitSearch} class="row" />
         </div>
-        <SearchResults results={this.state.results}/>
+        {this.state.loading && <Spinner />}
+        <SearchResults results={this.state.results}/> 
       </div>
     );
   }

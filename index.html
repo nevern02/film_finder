@@ -1,19 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <title>Film Finder</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="spinner.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>
+    <style>
+      body {
+        background: #eee;
+        font-family: 'Open Sans', sans-serif;
+      }
+    </style>
   </head>
   <body>
+    <div class="row text-center">
+      <h1>Film Finder</h1>
+      <h3><em>Powered by <a href="http://omdbapi.com/">OMDb</a></em></h3>
+    </div>
     <div class="container">
       <div id="search-tool"></div>
     </div>
     <script src="search_form.js" type="text/jsx"></script>
     <script src="search_result.js" type="text/jsx"></script>
     <script src="search_results.js" type="text/jsx"></script>
+    <script src="spinner.js" type="text/jsx"></script>
     <script src="search_tool.js" type="text/jsx"></script>
   </body>
 </html>
