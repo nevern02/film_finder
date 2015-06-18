@@ -4,7 +4,6 @@ var SearchTool = React.createClass({
       return;
     }
 
-    ga('send', 'event', 'search', 'typing', text);
     var results = [];
     this.setState({loading: true});
 
