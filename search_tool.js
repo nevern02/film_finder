@@ -1,14 +1,11 @@
-var data = [
-  {title: 'Transporter 3'},
-  {title: 'American Pie'}
-];
-
 var SearchTool = React.createClass({
   submitSearch: function(text) {
-    console.log("Submitting " + text);
+    $.getJSON('http://www.omdbapi.com/?s=' + text, function(data) {
+      this.setState({results: data.Search});
+    }.bind(this));
   },
   getInitialState: function() {
-    return {results: data};
+    return {results: []};
   },
   render: function() {
     return (
