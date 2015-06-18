@@ -4,6 +4,7 @@ var SearchTool = React.createClass({
 
     $.getJSON('http://www.omdbapi.com/?s=' + text, function(data) {
       this.setState({loading: false, results: data.Search});
+      ga('send', 'event', 'search', 'typing', text);
     }.bind(this));
   },
   getInitialState: function() {
