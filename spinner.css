@@ -3,8 +3,8 @@
   height: 40px;
 
   text-align: left;
-  position: fixed;
-  top: 25%;
+  position: absolute;
+  top: 30%;
   left: 50%;
 }
 
@@ -17,7 +17,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  
+
   -webkit-animation: bounce 2.0s infinite ease-in-out;
   animation: bounce 2.0s infinite ease-in-out;
 }
@@ -33,10 +33,10 @@
 }
 
 @keyframes bounce {
-  0%, 100% { 
+  0%, 100% {
     transform: scale(0.0);
     -webkit-transform: scale(0.0);
-  } 50% { 
+  } 50% {
     transform: scale(1.0);
     -webkit-transform: scale(1.0);
   }

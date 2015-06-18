@@ -1,10 +1,18 @@
 var SearchTool = React.createClass({
   submitSearch: function(text) {
+    if (text.length === 0) {
+      return;
+    }
+
+    ga('send', 'event', 'search', 'typing', text);
+    var results = [];
     this.setState({loading: true});
 
     $.getJSON('http://www.omdbapi.com/?s=' + text, function(data) {
-      this.setState({loading: false, results: data.Search});
-      ga('send', 'event', 'search', 'typing', text);
+      if (data.Search) {
+        results = data.Search
+      }
+      this.setState({loading: false, results: results});
     }.bind(this));
   },
   getInitialState: function() {
@@ -17,7 +25,7 @@ var SearchTool = React.createClass({
           <SearchForm onSubmitSearch={this.submitSearch} class="row" />
         </div>
         {this.state.loading && <Spinner />}
-        <SearchResults results={this.state.results}/> 
+        <SearchResults results={this.state.results}/>
       </div>
     );
   }
