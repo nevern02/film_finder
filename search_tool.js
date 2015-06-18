@@ -4,11 +4,17 @@ var data = [
 ];
 
 var SearchTool = React.createClass({
+  submitSearch: function(text) {
+    console.log("Submitting " + text);
+  },
+  getInitialState: function() {
+    return {results: data};
+  },
   render: function() {
     return (
       <div className="searchTool">
-        <SearchForm />
-        <SearchResults results={data}/>
+        <SearchForm onSubmitSearch={this.submitSearch} />
+        <SearchResults results={this.state.results}/>
       </div>
     );
   }
