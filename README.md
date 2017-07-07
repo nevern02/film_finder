@@ -1,6 +1,8 @@
 # Film Finder
 A movie database search tool built using [ReactJS](http://facebook.github.io/react/) and powered by the [Open Movie Database](http://omdbapi.com/).
 
+**Note:** This tool needs a functioning API key for the [OMDB](http://www.omdbapi.com/) API.
+
 ## Usage
 Clone the repo and serve the root directory using any web server.
 
