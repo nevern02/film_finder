@@ -6,7 +6,7 @@ A movie database search tool built using [ReactJS](http://facebook.github.io/rea
 ## Usage
 Clone the repo and serve the root directory using any web server.
 
-Alternatively, [use the deployed version](http://www.blrice.net/film_finder/).
+You can check out [the demo](http://www.blrice.net/film_finder/), but functionality is limited due to a missing API key.
 
 ## Contributing
 1. Fork it ( http://github.com/nevern02/film_finder/fork )
